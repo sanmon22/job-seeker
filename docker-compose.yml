@@ -1,0 +1,18 @@
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: job_seeker_ollama
+    restart: unless-stopped
+    ports: 
+      - "11434:11434"
+    volumes: 
+      - ollama_models:/root/.ollama
+    networks:
+      - job_seeker_network
+networks:
+  job_seeker_network:
+    name: job_seeker_network
+    driver: bridge
+volumes:
+  ollama_models:
+    name: job_seeker_ollama_models
