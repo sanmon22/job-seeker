@@ -9,6 +9,26 @@ services:
       - ollama_models:/root/.ollama
     networks:
       - job_seeker_network
+  n8n:
+    image: docker.n8n.io/n8nio/n8n:latest
+    container_name: job_seeker_n8n
+    restart: unless-stopped
+    ports:
+      - "5678:5678"
+    environment:
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=http
+      - NODE_ENV=production
+      - WEBHOOK_URL=http://localhost:5678/
+      - GENERIC_TIMEZONE=America/Bogota
+      - TZ=America/Bogota
+    volumes:
+      - n8n_data:/home/node/.n8n
+      - ./data:/data
+    networks:
+      - job_seeker_network
+    depends_on:
+      - ollama
 networks:
   job_seeker_network:
     name: job_seeker_network
@@ -16,3 +36,5 @@ networks:
 volumes:
   ollama_models:
     name: job_seeker_ollama_models
+  n8n_data:
+    name: job_seeker_n8n_data
