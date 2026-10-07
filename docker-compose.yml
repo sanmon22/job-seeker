@@ -29,6 +29,21 @@ services:
       - job_seeker_network
     depends_on:
       - ollama
+  playwright-service:
+    build:
+      context: ./playwright-service
+      dockerfile: Dockerfile
+    container_name: job_seeker_playwright
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - PLAYWRIGHT_PORT=3000
+      - NODE_ENV
+    volumes:
+      - ./data:/app/data
+    networks:
+      - job_seeker_network
 networks:
   job_seeker_network:
     name: job_seeker_network
