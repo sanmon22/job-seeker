@@ -26,15 +26,12 @@ export async function jobSearchQuery(query: string, options: SearchOptions = {})
     const { maxPages = 1, limit = 20 } = options;
     const discoveredJobs: DiscoveredJob[] = [];
 
-    console.log('búsqueda:', query);
-
     const context = await BrowserManager.createAuthenticatedContext();
     const page = await context.newPage();
 
     try {
         for (let currentPage = 1; currentPage <= maxPages; currentPage++) {
             const searchUrl = normalizeSearchURL(query, currentPage);
-            console.log(`Navegando a página ${currentPage}: ${searchUrl}`);
 
             await page.goto(searchUrl, { waitUntil: 'domcontentloaded', timeout: 30000 });
             await page.keyboard.press('Escape');
@@ -44,7 +41,7 @@ export async function jobSearchQuery(query: string, options: SearchOptions = {})
                     timeout: 10000
                 })
             } catch (error) {
-                console.error(`No se detectó ninguna oferta en la pag ${currentPage}`, error);
+                console.warn(`No se detectó ninguna oferta en la pag ${currentPage}`, error);
                 break;
             }
 
@@ -93,7 +90,7 @@ export async function jobSearchQuery(query: string, options: SearchOptions = {})
             }
         }
     } catch (error) {
-        console.error('Error durante la búsqueda en CompuTrabajo', error);
+        console.error(`[Search Error] Falló la búsqueda para "${query}":`, error);
         throw error;
     } finally {
         await page.close();

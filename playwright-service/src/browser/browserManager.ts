@@ -37,10 +37,9 @@ export class BrowserManager {
         };
 
         if (hasSession) {
-            console.log(`🔑 Cargando sesión autenticada desde: ${STORAGE_STATE_PATH}`);
             contextOptions.storageState = STORAGE_STATE_PATH;
         } else {
-            console.warn(`⚠️ No se encontró storageState.json. Navegando como usuario anónimo.`);
+            console.warn(`No se encontró storageState.json. Navegando como usuario anónimo.`);
         }
 
         return await browser.newContext(contextOptions)

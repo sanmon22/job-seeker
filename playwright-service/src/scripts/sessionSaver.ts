@@ -7,8 +7,6 @@ import { COMPUTRABAJO_BASE_URL, STORAGE_STATE_PATH, SESSIONS_DIR } from '../conf
 chromium.use(stealthPlugin());
 
 async function saveSession() {
-    console.log('🚀 Iniciando navegador interactivo para captura de sesión...');
-    console.log('👉 Por favor, inicia sesión con tu cuenta en la ventana de Chrome que se abrirá.');
 
     if (!fs.existsSync(SESSIONS_DIR)) {
         fs.mkdirSync(SESSIONS_DIR, { recursive: true });
@@ -28,9 +26,6 @@ async function saveSession() {
 
     page.goto(`${COMPUTRABAJO_BASE_URL}`, { waitUntil: 'domcontentloaded' });
 
-    console.log('\n⏳ Esperando a que completes el inicio de sesión...');
-    console.log('El script detectará automáticamente cuando ingreses a tu panel/perfil.\n');
-
     try {
         await page.waitForURL((url) => {
             const urlStr = url.toString();
@@ -40,14 +35,11 @@ async function saveSession() {
         await page.waitForTimeout(3000)
 
         await context.storageState({ path: STORAGE_STATE_PATH })
-        console.log('🎉 ¡SESIÓN CAPTURADA CON ÉXITO!');
-        console.log(`💾 Archivo guardado en: ${STORAGE_STATE_PATH}`);
 
     } catch (error) {
         console.error('❌ Tiempo de espera agotado o error al capturar la sesión:', error);
     } finally {
         await browser.close();
-        console.log('🔒 Navegador cerrado.');
     }
 }
 
