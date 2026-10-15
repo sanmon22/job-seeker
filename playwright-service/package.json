@@ -8,7 +8,7 @@
         "build": "tsc",
         "start": "node dist/server.js",
         "dev": "ts-node src/server.ts",
-        "session:save": "tsx src/browser/sessionSaver.ts"
+        "session:save": "tsx src/scripts/sessionSaver.ts"
     },
     "dependencies": {
         "dotenv": "^16.4.5",
