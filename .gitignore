@@ -6,6 +6,7 @@
 .env.*.local
 *.pem
 *.key
+profile.json
 
 # ==========================================
 # Browser Sessions & Sensitive Data

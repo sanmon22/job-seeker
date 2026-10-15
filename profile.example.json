@@ -1,0 +1,110 @@
+{
+  "personal_info": {
+    "full_name": "Nombre Candidato Ejemplo",
+    "professional_title": "Senior QA Analyst & Automation Engineer",
+    "location": {
+      "city": "Bogotá",
+      "country": "Colombia"
+    },
+    "contact": {
+      "email": "candidato@ejemplo.com",
+      "phone": "+57 300 000 0000"
+    },
+    "links": {
+      "github": "https://github.com/usuario-ejemplo",
+      "linkedin": "https://www.linkedin.com/in/usuario-ejemplo/",
+      "portfolio": "https://portfolio-ejemplo.dev/"
+    }
+  },
+  "summary": "Resumen profesional del candidato con experiencia en calidad técnica, automatización de pruebas y desarrollo de software.",
+  "work_experience": [
+    {
+      "company": "Empresa Ejemplo 1",
+      "role": "Quality Analyst",
+      "period": {
+        "start": "Ene 2024",
+        "end": "Actualidad"
+      },
+      "highlights": [
+        "Diseño e implementación de suites de pruebas funcionales y automatizadas.",
+        "Monitoreo de métricas de calidad y resolución de defectos de producción."
+      ],
+      "technologies": ["Playwright", "TypeScript", "JIRA", "Postman"]
+    }
+  ],
+  "technical_projects": [
+    {
+      "name": "Suite de Automatización E2E",
+      "stack": ["Playwright", "TypeScript", "Postman"],
+      "description": "Arquitectura y diseño de pruebas automatizadas con Page Object Model."
+    }
+  ],
+  "education": [
+    {
+      "degree": "Ingeniería de Software / Sistemas",
+      "institution": "Universidad Ejemplo",
+      "status": "Graduado"
+    }
+  ],
+  "certifications": [
+    {
+      "title": "Certificación en Automatización o Desarrollo",
+      "institution": "Plataforma Educativa",
+      "duration_hours": 100
+    }
+  ],
+  "skills": {
+    "qa_and_testing": [
+      "Playwright (TypeScript)",
+      "Postman",
+      "JIRA",
+      "Regression Testing"
+    ],
+    "development_and_architecture": [
+      "TypeScript",
+      "JavaScript",
+      "SQL",
+      "Git"
+    ],
+    "ai_and_automation": [
+      "n8n",
+      "Ollama",
+      "Prompt Engineering"
+    ],
+    "soft_skills": [
+      "Atención al detalle",
+      "Pensamiento crítico",
+      "Colaboración en equipo"
+    ]
+  },
+  "languages": [
+    {
+      "language": "Español",
+      "proficiency": "Nativo"
+    },
+    {
+      "language": "Inglés",
+      "proficiency": "B2 - Intermedio / Conversacional"
+    }
+  ],
+  "job_preferences": {
+    "target_roles": [
+      "QA Analyst",
+      "QA Automation Engineer",
+      "Software Developer"
+    ],
+    "work_modality": ["Remoto", "Híbrido"],
+    "target_locations": ["Bogotá", "Colombia", "Remoto"],
+    "minimum_salary_cop": 3500000,
+    "availability": "Inmediata",
+    "willing_to_relocate": false
+  },
+  "frequent_questions_answers": {
+    "years_of_experience_qa": "Cuento con más de 3 años de experiencia en QA técnico y automatización de pruebas.",
+    "years_of_experience_dev": "Experiencia en desarrollo web y diseño de APIs REST.",
+    "salary_expectation": "Aspiración salarial base a convenir según responsabilidades.",
+    "english_level": "Nivel de inglés conversacional y técnico para ceremonias y documentación.",
+    "immediate_availability": "Disponibilidad inmediata para inicio en modalidad remota o híbrida."
+  }
+}
+
