@@ -10,6 +10,7 @@ CREATE TABLE IF NOT EXISTS jobs (
     location TEXT,
     salary TEXT,
     url TEXT UNIQUE NOT NULL,
+    platform TEXT NOT NULL DEFAULT 'computrabajo',
     description TEXT,
     score INTEGER,
     match_reason TEXT,
@@ -35,3 +36,4 @@ CREATE TABLE IF NOT EXISTS applications_log (
 CREATE INDEX IF NOT EXISTS idx_jobs_url ON jobs(url);
 CREATE INDEX IF NOT EXISTS idx_jobs_status ON jobs(status);
 CREATE INDEX IF NOT EXISTS idx_jobs_score ON jobs(score);
+CREATE INDEX IF NOT EXISTS idx_jobs_platform ON jobs(platform);

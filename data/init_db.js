@@ -28,9 +28,9 @@ try {
     // Insertar y verificar un registro de prueba
     const testId = 'test-job-001';
     db.prepare(`
-        INSERT OR REPLACE INTO jobs (id, title, company, location, url, status)
+        INSERT OR REPLACE INTO jobs (id, title, company, location, url, platform, status)
         VALUES (?, ?, ?, ?, ?, ?)`
-    ).run(testId, 'QA Automation Engineer (Test)', 'Empresa Demo', 'Bogotá', 'https://co.computrabajo.com/', 'DISCOVERED');
+    ).run(testId, 'QA Automation Engineer (Test)', 'Empresa Demo', 'Bogotá', 'https://co.computrabajo.com/', 'computrabajo', 'DISCOVERED');
 
     const count = db.prepare('SELECT COUNT(*) as total FROM jobs').get();
     console.log(`🔍 Total de registros de prueba en jobs: ${count.total}`);
